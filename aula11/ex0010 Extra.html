@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper, please</title>
+</head>
+
+<body>
+    <h1> Sistema de Alfandega </h1>
+    País de Origem: <input type="string" name="txtori" id="txtori">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+</body>
+<script>
+    function verificar() {
+        var txtv = window.document.querySelector('input#txtori')
+        var res = window.document.querySelector('div#res')
+        var ori = txtv.value
+        res.innerHTML = `<p> Os produtos vindos do <strong> ${ori}</strong> recebem: </p>`
+        if (ori == 'Brasil' || ori == 'brasil') {
+            res.innerHTML += `<p>  Taxa de produto Nacional </p>`
+        } else {
+            res.innerHTML += `<p>  Taxa de produto Internacional </p>`
+        }
+    }
+</script>
+
+</html>
